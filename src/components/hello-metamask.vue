@@ -4,7 +4,7 @@
     <p v-else id="no-metamask"><i aria-hidden="true" class="fa fa-times"></i> Metamask not found</p>
     <p>Network: {{ network }}</p>
     <p>Account: {{ coinbase }}</p>
-    <p>Balance: {{ balance }} Wei </p>
+    <p>Balance: {{ balance }} Wei // {{ ethBalance }} Eth</p>
   </div>
 </template>
 
@@ -17,12 +17,18 @@ export default {
     isInjected: state => state.web3.isInjected,
     network: state => NETWORKS[state.web3.networkId],
     coinbase: state => state.web3.coinbase,
-    balance: state => state.web3.balance
+    balance: state => state.web3.balance,
+    ethBalance: state => {
+      if (state.web3.web3Instance !== null) return state.web3.web3Instance().fromWei(state.web3.balance, 'ether')
+    }
   })
 }
 </script>
 
 <style scoped>
+.metamask-info {
+  text-align:center;
+}
 #has-metamask {
   color: green;
 }
