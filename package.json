@@ -1,7 +1,7 @@
 {
-  "name": "dapp-test",
+  "name": "dapp-tutorial",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "A simple decentralized application in which the user can bet an amount of ether of choice on numbers 1-10.",
   "author": "kyriediculous <vergauwennico@gmail.com>",
   "private": true,
   "scripts": {
