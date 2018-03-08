@@ -3,4 +3,7 @@
 /dist/
 /*.js
 /test/unit/coverage/
+<<<<<<< HEAD
 /src/util/constants/
+=======
+>>>>>>> dbf8bcfc5083ca1c4130bdaf38c47dfbffa63c48
