@@ -49,7 +49,14 @@ contract Casino is Mortal{
   }
 
   function checkContractBalance() Owned public view returns(uint) {
-      address _contract = this;
-      return _contract.balance;
+      return address(this).balance;
   }
+
+  /*
+  ** Withdrawal function
+  function withDraw(uint _amount) public Owned {
+    require(address(this).balance > _amount);
+    owner.transfer(_amount);
+  }
+  */
 }
